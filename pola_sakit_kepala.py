@@ -1,13 +1,28 @@
 def pola_sakit_kepala(panjang, lebar):
-    panjang = (panjang)
-    lebar = (lebar)
+   
+    panjang = abs(panjang)
+    lebar = abs(lebar)
 
-    input(panjang, lebar)
+    if panjang != lebar:
+        print("Panjang dan lebar harus sama!!")
+    elif panjang % 2 == 0:
+        print("Panjang dan lebar harus bilangan ganjil!!")
+    else:
+        n = panjang
+        tengah = n // 2   
 
-    for i in range (number + 1):
-        spasi = "  " * (number - baris)
-        naik = " ".join(str(i) for i in range(1, baris + 1))
-        turun = " ".join(str(i) for i in range(baris - 1, 0, -1))
+        for baris in range(n):
+            for kolom in range(n):
+                # jarak Manhattan dari titik tengah + 1 = nilai pada posisi itu
+                jarak = abs(baris - tengah) + abs(kolom - tengah)
+                nilai = (jarak + 1) % 10  
+
+                if kolom == n - 1:
+                    print(nilai, end="")
+                else:
+                    print(nilai, end=" ")
+            print()
+
 
 print("no 1. (pola 7,7)")
 pola_sakit_kepala(7, 7)
