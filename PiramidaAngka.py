@@ -1,6 +1,6 @@
-def pirmaida_angka(angka):
-    for baris in range(1, angka + 1):
-        spasi = "  " * (angka - baris)
+def pirmaida_angka(number):
+    for baris in range(1, number + 1):
+        spasi = "  " * (number - baris)
         naik = " ".join(str(i) for i in range(1, baris + 1))
         turun = " ".join(str(i) for i in range(baris - 1, 0, -1))
         if turun:
