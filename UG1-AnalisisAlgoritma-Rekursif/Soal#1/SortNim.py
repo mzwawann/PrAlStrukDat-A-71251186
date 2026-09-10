@@ -5,16 +5,13 @@ def InsertRecursive(sorted_array, current_value, current_length, is_odd):
     if current_length == 0:
         return [current_value]
 
-    # Ambil elemen terakhir
     last = sorted_array[current_length - 1]
 
-    # Jika tipe GANJIL → ascending
     if is_odd:
         if current_value >= last:
             return sorted_array[:current_length] + [current_value]
         else:
             return InsertRecursive(sorted_array[:current_length-1], current_value, current_length-1, is_odd) + [last]
-    # Jika tipe GENAP → descending
     else:
         if current_value <= last:
             return sorted_array[:current_length] + [current_value]
@@ -29,7 +26,7 @@ def RecursiveFilterSort(data_array, current_length, is_odd):
     if current_length == 0:
         return []
 
-    # Ambil elemen terakhir
+
     current_value = data_array[current_length - 1]
 
     # Rekursi untuk sisa array
@@ -44,21 +41,18 @@ def RecursiveFilterSort(data_array, current_length, is_odd):
         return result
 
 
-# Ganti Dengan NIM Anda
-# Contoh, NIM_MAHASISWA = "71230994" -> nanti outputnya [4, 2, 0] 
 NIM_MAHASISWA = "71251186"
 
 if NIM_MAHASISWA != "":
     raw_data = [int(digit) for digit in NIM_MAHASISWA]
     data_length = len(raw_data)
     
-     # Cek ganjil/genap
     is_odd = int(NIM_MAHASISWA[-1]) % 2 == 1
     tipe = "GANJIL (Ascending)" if is_odd else "GENAP (Descending)"
     
     final_result = RecursiveFilterSort(raw_data, data_length, is_odd)
 
-    # TODO 3: cetak hasil akhir sesuai format yang diminta.
+    # TODO 
     print("===== FILTER & SORT NIM =====")
     print("NIM Mahasiswa  :", NIM_MAHASISWA)
     print("Tipe           :", tipe)

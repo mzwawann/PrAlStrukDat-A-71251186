@@ -2,7 +2,7 @@
 import random
 
 def totalPenjualan(data, n):
-    if n == 0:  #saat tidak ada data yang tersisa, fungsi berhenti dan mengembalikan 0
+    if n == 0:  
         return 0
     return data[n-1][1] + totalPenjualan(data, n-1) #data[n-1][1] = mengambil nilai penjualan dari elemen terakhir, n adalah jumlah elemen yang sedang diproses
 
