@@ -12,6 +12,7 @@ KATALOG_AWAL = {
 }
 
 
+
 def buat_katalog():
     return {kode: dict(data) for kode, data in KATALOG_AWAL.items()}
 
